@@ -1,0 +1,10 @@
+<div class="flex-container">
+	<div class="flex-item1">
+		<app-filter (groupFilters)="filters = $event"></app-filter>
+		<mat-divider></mat-divider>
+		<app-add-product (newProduct) = "newProduct = $event" class="flex-item"></app-add-product>
+	</div>
+	<div class = "flex-item2">
+		<app-product-list class="flex-item" [groupFilters]="filters" [searchByKeyword]="searchText" [newProduct] = "newProduct"></app-product-list>
+	</div>
+</div>

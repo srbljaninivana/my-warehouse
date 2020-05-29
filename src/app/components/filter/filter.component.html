@@ -1,0 +1,36 @@
+<mat-card>
+		<mat-card-title >Filter products</mat-card-title>
+		<mat-card-content>
+			<form [formGroup]="form" (ngSubmit)="filter(form.value)">
+				<div>
+					<mat-form-field class="form-field" appearance="fill">
+						<mat-label>Code</mat-label>
+							<input  matInput type="text" formControlName="code" placeholder="Product Code"/>
+					</mat-form-field>
+				</div>
+
+				<div>
+					<mat-form-field>
+						<mat-label>Floor</mat-label>
+						<mat-select formControlName="floor" placeholder="Floor">
+<!-- 							<mat-option>--</mat-option> -->
+							<mat-option [value]="floor" *ngFor="let floor of floors">{{floor}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+				<div>
+					<mat-form-field>
+						<mat-label>Section</mat-label>
+						<mat-select formControlName="section" placeholder="Section">
+<!-- 							<mat-option>--</mat-option> -->
+							<mat-option [value]="section" *ngFor="let section of sections">{{section}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+
+
+					<button mat-raised-button color="primary">Filter</button>
+			</form>
+		</mat-card-content>
+</mat-card>
+

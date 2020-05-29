@@ -1,0 +1,21 @@
+<mat-toolbar color="warn">Product List</mat-toolbar>
+<div class="flex-container">
+	
+	<div class = "flex-item">
+		<mat-toolbar color="primary"></mat-toolbar>
+	    <div>
+	    	<mat-list role="list" >
+			  <mat-list-item role="listitem" *ngFor = "let product of filteredProducts">
+					<div mat-line><strong>{{product.code}}</strong></div>
+					<div mat-line><span>Quantity: </span>{{product.quantity}}</div>
+					<div mat-line><span>Floor: </span>{{product.floor}}</div>
+					<div mat-line><span>Section: </span>{{product.section}}</div>
+					<div mat-line><span>Location: </span>{{product.floor}} / {{product.section}}</div>
+					<button mat-button color="primary" (click) = "updateProduct(product)">UPDATE</button>
+			  </mat-list-item>
+			</mat-list>
+	    </div>
+	</div>
+
+	<app-update-product class="flex-item" [product]="productToUpdate"></app-update-product>	
+</div>
